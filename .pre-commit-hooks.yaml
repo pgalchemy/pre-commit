@@ -52,4 +52,8 @@
   entry: hooks/gql.sh
   language: script
   files: \.gql$
-  exclude: aws.gql
+          exclude: >
+            (?x)^(
+                aws.gql|
+                example.gql
+            )$
