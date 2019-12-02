@@ -8,5 +8,5 @@ set -e
 export PATH=$PATH:/usr/local/bin
 
 for file in "$@"; do
-  graphql-schema-linter --comment-descriptions "./$(dirname "$file") ./$(dirname "aws.gql")"
+  go test "$(dirname "$file")"
 done

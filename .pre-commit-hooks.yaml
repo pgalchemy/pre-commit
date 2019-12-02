@@ -30,11 +30,21 @@
   files: \.go$
   exclude: vendor\/.*$
 
+- id: gotest
+  name: gotest
+  description: go test runs unit tests on changed files
+  entry: hooks/goimports.sh
+  language: script
+  files: \.go$
+  exclude: infrastructure\/.*$
+
 - id: golint
   name: golint
   description: Golint is a linter for Go source code.
   entry: hooks/golint.sh
   language: script
+  files: \.go$
+  exclude: vendor\/.*$
 
 - id: graphql-lint
   name: graphql lint
