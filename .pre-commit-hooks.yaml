@@ -52,4 +52,9 @@
   entry: hooks/gql.sh
   language: script
   files: \.gql$
+  exclude: |
+    (?x)(
+        ^infrastructure/modules/|
+        ^infrastructure/platform/gql/aws.sql
+    )
   exclude: ^infrastructure/modules/
