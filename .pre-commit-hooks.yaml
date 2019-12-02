@@ -54,6 +54,6 @@
   files: \.gql$
   exclude: >
     (?x)^(
-        aws.gql|
-        example.gql
+        ^aws.gql|
+        ^example.gql
     )$
