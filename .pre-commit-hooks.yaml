@@ -35,24 +35,11 @@
   description: Golint is a linter for Go source code.
   entry: hooks/golint.sh
   language: script
-  files: \.go$
-  exclude: vendor\/.*$
 
-- id: yapf
-  name: yapf
-  description: yapf (Yet Another Python Formatter) is a python formatter from Google.
-  entry: hooks/yapf.sh
+- id: graphql-lint
+  name: graphql lint
+  description: GraphQL Lint is a linter for gql schema files
+  entry: hooks/gql.sh
   language: script
-  files: \.py$
-  exclude: >
-    (?x)^(
-      \.tox\/.*$|
-      __pycache__\/.*$
-    )$
-
-- id: helmlint
-  name: helmlint
-  description: Run helm lint, a linter for helm charts
-  entry: hooks/helmlint.sh
-  language: script
-  files: \.((ya?ml)|(tpl))$
+  files: \.gql$
+  exclude: aws.gql

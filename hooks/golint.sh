@@ -7,12 +7,15 @@ set -e
 # workaround to allow GitHub Desktop to work, add this (hopefully harmless) setting here.
 export PATH=$PATH:/usr/local/bin
 
+#!/bin/bash
 exit_status=0
 
-for file in "$@"; do
-    if ! golint -set_exit_status "$file"; then
+if hash golangci-lint 2>/dev/null; then
+    if ! golangci-lint run --no-config --deadline=10m --enable=deadcode --enable=golint --enable=varcheck --enable=structcheck --enable=gocyclo --enable=errcheck --enable=gofmt --enable=goimports --enable=misspell --enable=interfacer --enable=unparam --enable=nakedret --enable=prealloc --enable=scopelint --enable=bodyclose --enable=gosec --enable=megacheck; then
         exit_status=1
     fi
-done
+else
+  exit_status=1
+fi
 
 exit ${exit_status}
