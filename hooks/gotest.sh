@@ -9,5 +9,5 @@ export PATH=$PATH:/usr/local/bin
 
 
 for file in "$@"; do
-  go test "./$(dirname "$file")"
+  go test "./$(dirname "$file")/..."
 done
