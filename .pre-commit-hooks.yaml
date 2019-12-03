@@ -55,6 +55,6 @@
   exclude: |
     (?x)(
         ^infrastructure/modules/|
-        ^infrastructure/platform/gql/aws.sql
+        ^infrastructure/platform/gql/aws.gql
     )
   exclude: ^infrastructure/modules/
