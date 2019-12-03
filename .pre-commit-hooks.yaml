@@ -57,4 +57,3 @@
         ^infrastructure/modules/|
         ^infrastructure/platform/gql/aws.gql
     )
-  exclude: ^infrastructure/modules/

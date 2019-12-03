@@ -7,7 +7,4 @@ set -e
 # workaround to allow GitHub Desktop to work, add this (hopefully harmless) setting here.
 export PATH=$PATH:/usr/local/bin
 
-
-for file in "$@"; do
-  go test "./$(dirname "$file")/..."
-done
+go test --cover ./functions/... ./services/... ./repositories/... ./util/...
