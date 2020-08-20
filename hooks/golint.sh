@@ -11,7 +11,7 @@ export PATH=$PATH:/usr/local/bin
 exit_status=0
 
 if hash golangci-lint 2>/dev/null; then
-    if ! golangci-lint run --no-config --deadline=10m --enable=deadcode --enable=golint --enable=varcheck --enable=structcheck --enable=gocyclo --enable=errcheck --enable=gofmt --enable=goimports --enable=misspell --enable=interfacer --enable=unparam --enable=nakedret --enable=prealloc --enable=scopelint --enable=bodyclose --enable=gosec --enable=megacheck; then
+    if !golangci-lint run --allow-parallel-runners --no-config --deadline=10m --enable=deadcode --enable=golint --enable=varcheck --enable=structcheck --enable=gocyclo --enable=errcheck --enable=gofmt --enable=goimports --enable=misspell --enable=interfacer --enable=unparam --enable=nakedret --enable=prealloc --enable=scopelint --enable=bodyclose --enable=gosec --enable=megacheck; then
         exit_status=1
     fi
 else
